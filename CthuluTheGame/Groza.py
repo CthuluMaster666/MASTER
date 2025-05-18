@@ -25,9 +25,11 @@ czcionka = pygame.font.SysFont("arial", 50)
 start_text = czcionka.render("START GAME", True, bialy)
 exit_text = czcionka.render("EXIT", True, bialy)
 powrot_text = czcionka.render("BACK", True, bialy)
+stworz_postac_text = czcionka.render("Stwórz Postać", True, bialy)
 
 # Pozycje przycisków
 start_rect = pygame.Rect(200, 200, 400, 60)
+create_character_rect = pygame.Rect(200, 200, 400, 60)
 exit_rect = pygame.Rect(200, 300, 400, 60)
 back_rect = pygame.Rect(200, 500, 400, 60)
 
@@ -42,11 +44,11 @@ def rysuj_menu():
     ekran.blit(exit_text, (exit_rect.x + 15, exit_rect.y + 5))
     pygame.display.flip()
 
-def rysuj_poziom(tekst, tlo_poziomu):
+def rysuj_poziom(tlo_poziomu):
     ekran.blit(tlo_poziomu, (0, 0))
-    tekst_poziomu = czcionka.render(tekst, True, bialy)
-    ekran.blit(tekst_poziomu, (200, 200))
     pygame.draw.rect(ekran, niebieski, back_rect)
+    pygame.draw.rect(ekran, niebieski, create_character_rect)
+    ekran.blit(stworz_postac_text,(create_character_rect.x +15, create_character_rect.y + 5))
     ekran.blit(powrot_text, (back_rect.x + 15, back_rect.y + 5))
     pygame.display.flip()
 
@@ -73,4 +75,4 @@ while True:
     if ekran_aktywny == "menu":
         rysuj_menu()
     elif ekran_aktywny == "gra":
-        rysuj_poziom("Umarłeś chuju niemyty", tlo_poziom1)
+        rysuj_poziom(tlo_poziom1)
