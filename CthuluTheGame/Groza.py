@@ -73,4 +73,4 @@ while True:
     if ekran_aktywny == "menu":
         rysuj_menu()
     elif ekran_aktywny == "gra":
-        rysuj_poziom("Umarłeś", tlo_poziom1)
+        rysuj_poziom("Umarłeśśśś", tlo_poziom1)
