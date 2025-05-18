@@ -1,6 +1,7 @@
 from types import new_class
 from unittest import case
 import random
+from Umiejetnosci import *
 
 def number_to_string(b):
     match b:
@@ -12,26 +13,6 @@ def number_to_string(b):
             return "two"
         case _:
             return "default"
-
-
-
-
-class Abbility:
-    def __init__(self, nazwa, wartosc):
-        self.nazwa = nazwa
-        self.wartosc = wartosc
-    def __str__(self):
-        return f"{self.nazwa} {self.wartosc}"
-    def skillcheck(self):
-        self.rzut=random.randint(0,100)
-        #print(self.rzut)
-        #print(self.wartosc)
-        if self.rzut <= self.wartosc:
-            return print("test zdany")
-        else:
-            return print("test niezdany")
-
-
 
 class Postac :
     def __init__(self, imie):
@@ -53,10 +34,10 @@ print(gracz)
 #print(postac3)
 
 #print(gracz.skradanie.wartosc)
-
+lokalizacjapostaci="Postacie/"
 
 try:
-    with open(gracz.imie, "x") as f:
+    with open(lokalizacjapostaci+gracz.imie, "x") as f:
         f.writelines(gracz.__str__())
 except FileExistsError:
     print("postac o takim imieniu juz istnieje")
