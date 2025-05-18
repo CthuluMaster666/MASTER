@@ -23,7 +23,7 @@ class Postac :
     def __str__(self):
         return f"{self.imie} {self.skradanie} {self.atletyka} {self.perswazja}"
 
-
+lokalizacjapostaci="Postacie/"
 imiepostaci = input("podaj imie postaci ")
 gracz = Postac(imiepostaci)
 #postac2 = Postac(imie="Marzenka")
@@ -34,7 +34,6 @@ print(gracz)
 #print(postac3)
 
 #print(gracz.skradanie.wartosc)
-lokalizacjapostaci="Postacie/"
 
 try:
     with open(lokalizacjapostaci+gracz.imie, "x") as f:
